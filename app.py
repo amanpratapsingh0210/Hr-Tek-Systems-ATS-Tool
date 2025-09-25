@@ -18,7 +18,7 @@ def download_nltk_data():
     """Downloads necessary NLTK data packs."""
     try:
         nltk.data.find('tokenizers/punkt')
-    except nltk.downloader.DownloadError:
+    except LookupError:
         nltk.download('punkt', quiet=True)
 
 download_nltk_data()
