@@ -12,6 +12,11 @@ from urllib.parse import urlparse, parse_qs
 
 st.set_page_config(page_title="HR-Tek Systems ATS Checker", page_icon="📄", layout="wide")
 
+st.markdown("""<style>
+
+
+
+</style>""", unsafe_allow_html=True)
 
 @st.cache_resource
 def download_nltk_data():
@@ -24,77 +29,84 @@ def download_nltk_data():
 download_nltk_data()
 
 PREDEFINED_JOB_DESCRIPTIONS = {
-    "Cloud / DevOps / Cybersecurity": """
-    About the Role: Help HR-Tek optimize cloud usage and deploy the product on AWS with scalability, monitoring, and automation in mind.
-    Ensure the HR-Tek platform is enterprise-ready by conducting penetration testing, fixing vulnerabilities, and strengthening compliance.
+    "Cloud / DevOps / Cybersecurity": """Cloud / DevOps / Cybersecurity:-
 
-    Responsibilities:
-    Deploy staging and production environments on AWS.
-    Set up auto-scaling groups, load balancers, and monitoring (CloudWatch).
-    Work on CI/CD pipelines using AWS CodePipeline / Jenkins.
-    Optimize AWS credits for cost efficiency.
-    Perform vulnerability scanning & penetration testing.
-    Configure IAM roles and security groups in AWS.
-    Ensure compliance with GDPR & data privacy best practices.
-    Prepare security documentation for enterprise clients.
+About the Role:
+-> Help HR-Tek optimize cloud usage and deploy the product on AWS with scalability, monitoring, and automation in mind.
+-> Ensure the HR-Tek platform is enterprise-ready by conducting penetration testing, fixing vulnerabilities, and strengthening compliance.
 
-    Preferred Skills: AWS, EC2, S3, RDS, VPC, IAM, CloudFormation/Terraform, Linux basics, Ethical hacking tools, OWASP Top 10, Firewalls, Cloud Security.
+Responsibilities:
+-> Deploy staging and production environments on AWS.
+-> Set up auto-scaling groups, load balancers, and monitoring (CloudWatch).
+-> Work on CI/CD pipelines using AWS CodePipeline / Jenkins.
+-> Optimize AWS credits for cost efficiency.
+-> Perform vulnerability scanning & penetration testing.
+-> Configure IAM roles and security groups in AWS.
+-> Ensure compliance with GDPR & data privacy best practices.
+-> Prepare security documentation for enterprise clients.
+
+Preferred Skills: AWS, EC2, S3, RDS, VPC, IAM, CloudFormation/Terraform, Linux basics, Ethical hacking tools, OWASP Top 10, Firewalls, Cloud Security.
     """,
 
-    "Data Science & Analytics": """
-    About the Role: Build smart HR analytics that help companies understand attrition, engagement, and HR maturity through dashboards.
-
-    Responsibilities:
-    Analyze HR datasets and create predictive models.
-    Develop dashboards for attrition, engagement, and trends.
-    Support HR Maturity Assessment scoring logic.
-    Work with Power BI / Python for data visualization.
-
-    Preferred Skills: Python (Pandas, NumPy, Scikit-learn), SQL, Power BI / Tableau, statistics.
-    """,
-
-    "Generative AI, Blockchain, SAP, Salesforce": """
-    About the Role: Support HR-Tek in building integration-ready modules with enterprise HR systems like SAP, Workday, and Salesforce.
-    Build AI-driven features like HR chatbots, auto-generated digital roadmaps, and vendor-fit recommendations for clients.
-
-    Responsibilities:
-
-    Research integration frameworks of major HRIS (SAP, Workday, Darwinbox).
-    Build mock APIs for data exchange between HR-Tek and external tools.
-    Document integration workflows for enterprise readiness.
-    Work on data mapping & testing.
-    Train and fine-tune LLMs for HR queries.
-    Build a chatbot for HR digital advisory.
-    Prototype AI-based roadmap & recommendation engines.
-    Experiment with OpenAI / Hugging Face models.
-
-    Preferred Skills: REST APIs, JSON, Postman, Salesforce basics, SAP/Workday APIs (preferred), Python, LangChain, OpenAI APIs, NLP basics, prompt engineering.
-    """,
-
-    "Product Testing & QA": """
-    About the Role: Help HR-Tek ensure reliability and smooth scaling by testing features across browsers, devices, and automating regression testing.
-
-    Responsibilities:
-
-    Write Selenium scripts for automated regression testing.
-    Conduct manual testing for new features.
-    Ensure cross-browser & cross-device compatibility.
-    Report bugs & work closely with developers for fixes.
-
-    Preferred Skills: Selenium WebDriver, TestNG, basic Python/Java, manual testing methods.
-    """,
-
-    "UI/UX Design": """
-    About the Role: Design clean, modern, and user-friendly dashboards for HR leaders, ensuring the product feels intuitive and enterprise-grade.
+    "Data Science & Analytics": """Data Science & Analytics:-
     
-    Responsibilities:
+About the Role:
+-> Build smart HR analytics that help companies understand attrition, engagement, and HR maturity through dashboards.
+
+Responsibilities:
+-> Analyze HR datasets and create predictive models.
+-> Develop dashboards for attrition, engagement, and trends.
+-> Support HR Maturity Assessment scoring logic.
+-> Work with Power BI / Python for data visualization.
+
+Preferred Skills: Python (Pandas, NumPy, Scikit-learn), SQL, Power BI / Tableau, statistics.
+    """,
+
+    "Generative AI, Blockchain, SAP, Salesforce": """Generative AI, Blockchain, SAP, Salesforce:-
     
-    Write Selenium scripts for automated regression testing.
-    Conduct manual testing for new features.
-    Ensure cross-browser & cross-device compatibility.
-    Report bugs & work closely with developers for fixes.
+About the Role:
+-> Support HR-Tek in building integration-ready modules with enterprise HR systems like SAP, Workday, and Salesforce.
+-> Build AI-driven features like HR chatbots, auto-generated digital roadmaps, and vendor-fit recommendations for clients.
+
+Responsibilities:
+-> Research integration frameworks of major HRIS (SAP, Workday, Darwinbox).
+-> Build mock APIs for data exchange between HR-Tek and external tools.
+-> Document integration workflows for enterprise readiness.
+-> Work on data mapping & testing.
+-> Train and fine-tune LLMs for HR queries.
+-> Build a chatbot for HR digital advisory.
+-> Prototype AI-based roadmap & recommendation engines.
+-> Experiment with OpenAI / Hugging Face models.
+
+Preferred Skills: REST APIs, JSON, Postman, Salesforce basics, SAP/Workday APIs (preferred), Python, LangChain, OpenAI APIs, NLP basics, prompt engineering.
+    """,
+
+    "Product Testing & QA": """Product Testing & QA:-
     
-    Preferred Skills: Selenium WebDriver, TestNG, basic Python/Java, manual testing methods.
+About the Role:
+-> Help HR-Tek ensure reliability and smooth scaling by testing features across browsers, devices, and automating regression testing.
+
+Responsibilities:
+-> Write Selenium scripts for automated regression testing.
+-> Conduct manual testing for new features.
+-> Ensure cross-browser & cross-device compatibility.
+-> Report bugs & work closely with developers for fixes.
+
+Preferred Skills: Selenium WebDriver, TestNG, basic Python/Java, manual testing methods.
+    """,
+
+    "UI/UX Design": """UI/UX Design:-
+    
+About the Role:
+-> Design clean, modern, and user-friendly dashboards for HR leaders, ensuring the product feels intuitive and enterprise-grade.
+    
+Responsibilities:
+-> Write Selenium scripts for automated regression testing.
+-> Conduct manual testing for new features.
+-> Ensure cross-browser & cross-device compatibility.
+-> Report bugs & work closely with developers for fixes.
+    
+Preferred Skills: Selenium WebDriver, TestNG, basic Python/Java, manual testing methods.
     """,
 
     "Custom Job Description": ""
@@ -298,16 +310,16 @@ col1, col2 = st.columns(2)
 
 with col1:
     st.header("Your Resume")
-    
+        
     # Choice between manual upload and Google Drive link
     upload_method = st.radio(
         "Choose how to provide your resume:",
         ["Upload File", "Google Drive Link"],
         help="Select whether to upload a file directly or provide a Google Drive link"
     )
-    
+        
     resume_text = None
-    
+        
     if upload_method == "Upload File":
         uploaded_resume = st.file_uploader("Upload your resume in PDF format", type=["pdf"])
         if uploaded_resume is not None:
@@ -318,7 +330,7 @@ with col1:
             placeholder="https://drive.google.com/file/d/1ABC.../view?usp=sharing",
             help="Paste the Google Drive shareable link to your resume PDF"
         )
-        
+            
         if gdrive_url:
             if "drive.google.com" in gdrive_url:
                 file_id = extract_file_id_from_gdrive_url(gdrive_url)
@@ -334,18 +346,19 @@ with col1:
             else:
                 st.error("❌ Please provide a valid Google Drive URL")
 
-with col2:
+
     st.header("Job Description")
-    
+        
     selected_jd = st.selectbox(
         "Choose a predefined job description:",
         options=list(PREDEFINED_JOB_DESCRIPTIONS.keys()),
         help="Select from predefined job descriptions or choose 'Custom Job Description' to paste your own"
     )
-    
+
+with col2:        
     if selected_jd != "Custom Job Description":
         st.subheader("Selected Job Description:")
-        st.text_area("", value=PREDEFINED_JOB_DESCRIPTIONS[selected_jd], height=200, disabled=True, key="preview_jd")
+        st.text_area("", value=PREDEFINED_JOB_DESCRIPTIONS[selected_jd], height=350, disabled=True, key="preview_jd")
         job_description = PREDEFINED_JOB_DESCRIPTIONS[selected_jd]
     else:
         st.subheader("Custom Job Description:")
