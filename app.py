@@ -12,11 +12,6 @@ from urllib.parse import urlparse, parse_qs
 
 st.set_page_config(page_title="HR-Tek Systems ATS Checker", page_icon="📄", layout="wide")
 
-st.markdown("""<style>
-
-
-
-</style>""", unsafe_allow_html=True)
 
 @st.cache_resource
 def download_nltk_data():
@@ -32,7 +27,7 @@ PREDEFINED_JOB_DESCRIPTIONS = {
     "Cloud / DevOps / Cybersecurity": """Cloud / DevOps / Cybersecurity:-
 
 About the Role:
--> Help HR-Tek optimize cloud usage and deploy the product on AWS with scalability, monitoring, and automation in mind.
+-> Help HR-Tek optimize cloud usageand deploy the product on AWS with scalability, monitoring, and automation in mind.
 -> Ensure the HR-Tek platform is enterprise-ready by conducting penetration testing, fixing vulnerabilities, and strengthening compliance.
 
 Responsibilities:
@@ -101,12 +96,12 @@ About the Role:
 -> Design clean, modern, and user-friendly dashboards for HR leaders, ensuring the product feels intuitive and enterprise-grade.
     
 Responsibilities:
--> Write Selenium scripts for automated regression testing.
--> Conduct manual testing for new features.
--> Ensure cross-browser & cross-device compatibility.
--> Report bugs & work closely with developers for fixes.
+-> Create wireframes, mockups, and Figma prototypes.
+-> Conduct usability testing with mock users.
+-> Improve dashboard designs for clarity and adoption.
+-> Work with developers to implement designs.
     
-Preferred Skills: Selenium WebDriver, TestNG, basic Python/Java, manual testing methods.
+Preferred Skills: Figma, Adobe XD, UX research, design systems.
     """,
 
     "Custom Job Description": ""
@@ -309,7 +304,7 @@ st.markdown("""
 col1, col2 = st.columns(2)
 
 with col1:
-    st.header("Your Resume")
+    st.header("Resume")
         
     # Choice between manual upload and Google Drive link
     upload_method = st.radio(
@@ -347,7 +342,7 @@ with col1:
                 st.error("❌ Please provide a valid Google Drive URL")
 
 
-    st.header("Job Description")
+    st.header("Intern Role")
         
     selected_jd = st.selectbox(
         "Choose a predefined job description:",
@@ -357,11 +352,18 @@ with col1:
 
 with col2:        
     if selected_jd != "Custom Job Description":
-        st.subheader("Selected Job Description:")
-        st.text_area("", value=PREDEFINED_JOB_DESCRIPTIONS[selected_jd], height=350, disabled=True, key="preview_jd")
+        st.header("Job Description:")
+        # Use a unique key that changes with the selection to force re-render
+        st.text_area(
+            "", 
+            value=PREDEFINED_JOB_DESCRIPTIONS[selected_jd], 
+            height=400, 
+            disabled=True, 
+            key=f"preview_jd_{selected_jd}"  # Dynamic key based on selection
+        )
         job_description = PREDEFINED_JOB_DESCRIPTIONS[selected_jd]
     else:
-        st.subheader("Custom Job Description:")
+        st.header("Custom Job Description:")
         job_description = st.text_area("Paste your custom job description here", height=200, key="custom_jd")
 
 if st.button("Analyze Compatibility", type="primary", use_container_width=True):
