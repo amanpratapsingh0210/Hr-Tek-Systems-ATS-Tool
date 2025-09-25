@@ -313,7 +313,7 @@ def get_gemini_analysis(resume_text, jd_text):
 
 logo_col1, logo_col2, logo_col3 = st.columns([1, 2, 1])
 with logo_col2:
-    st.image("hr-tek-systems-logo.jpg", width=830, use_column_width=False)
+    st.image("hr-tek-systems-logo.jpg", width=830)
 
 # Centered title
 st.markdown('<h1 class="main-title">ATS Resume Compatibility Checker</h1>', unsafe_allow_html=True)
