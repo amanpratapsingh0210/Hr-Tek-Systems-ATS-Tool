@@ -12,6 +12,22 @@ from urllib.parse import urlparse, parse_qs
 
 st.set_page_config(page_title="HR-Tek Systems ATS Checker", page_icon="📄", layout="wide")
 
+st.markdown("""
+<style>
+    /* Hide Streamlit branding */
+    MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    header {visibility: hidden;}
+
+    .main-title {
+        text-align: center;
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        color: #2563eb;
+    }
+</style>
+""", unsafe_allow_html=True)
 
 @st.cache_resource
 def download_nltk_data():
@@ -295,10 +311,13 @@ def get_gemini_analysis(resume_text, jd_text):
 
 # MAIN APP
 
-st.title("ATS Resume Compatibility Checker (Powered by Gemini)")
-st.markdown("""
+logo_col1, logo_col2, logo_col3 = st.columns([1, 2, 1])
+with logo_col2:
+    st.image("hr-tek-systems-logo.jpg", width=830, use_column_width=False)
 
-""")
+# Centered title
+st.markdown('<h1 class="main-title">ATS Resume Compatibility Checker</h1>', unsafe_allow_html=True)
+st.markdown('<p style="text-align: center; font-size: 1.2rem; color: #666; margin-bottom: 2rem;">As a Hybrid SAAS HR Digital Transformation</p>', unsafe_allow_html=True)
 
 # --- Layout with columns ---
 col1, col2 = st.columns(2)
