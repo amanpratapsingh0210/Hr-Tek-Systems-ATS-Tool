@@ -40,40 +40,35 @@ def download_nltk_data():
 download_nltk_data()
 
 PREDEFINED_JOB_DESCRIPTIONS = {
-    "Cloud / DevOps / Cybersecurity": """Cloud / DevOps / Cybersecurity:-
+    "Cloud / DevOps Intern (AWS Focused)": """Cloud / DevOps Intern (AWS Focused):-
 
 About the Role:
 -> Help HR-Tek optimize cloud usageand deploy the product on AWS with scalability, monitoring, and automation in mind.
--> Ensure the HR-Tek platform is enterprise-ready by conducting penetration testing, fixing vulnerabilities, and strengthening compliance.
 
 Responsibilities:
 -> Deploy staging and production environments on AWS.
 -> Set up auto-scaling groups, load balancers, and monitoring (CloudWatch).
 -> Work on CI/CD pipelines using AWS CodePipeline / Jenkins.
 -> Optimize AWS credits for cost efficiency.
--> Perform vulnerability scanning & penetration testing.
--> Configure IAM roles and security groups in AWS.
--> Ensure compliance with GDPR & data privacy best practices.
--> Prepare security documentation for enterprise clients.
 
-Preferred Skills: AWS, EC2, S3, RDS, VPC, IAM, CloudFormation/Terraform, Linux basics, Ethical hacking tools, OWASP Top 10, Firewalls, Cloud Security.
+Preferred Skills: AWS, EC2, S3, RDS, VPC, IAM, CloudFormation/Terraform, Linux basics.
     """,
 
-    "Data Science & Analytics": """Data Science & Analytics:-
+#     "Data Science & Analytics": """Data Science & Analytics:-
     
-About the Role:
--> Build smart HR analytics that help companies understand attrition, engagement, and HR maturity through dashboards.
+# About the Role:
+# -> Build smart HR analytics that help companies understand attrition, engagement, and HR maturity through dashboards.
 
-Responsibilities:
--> Analyze HR datasets and create predictive models.
--> Develop dashboards for attrition, engagement, and trends.
--> Support HR Maturity Assessment scoring logic.
--> Work with Power BI / Python for data visualization.
+# Responsibilities:
+# -> Analyze HR datasets and create predictive models.
+# -> Develop dashboards for attrition, engagement, and trends.
+# -> Support HR Maturity Assessment scoring logic.
+# -> Work with Power BI / Python for data visualization.
 
-Preferred Skills: Python (Pandas, NumPy, Scikit-learn), SQL, Power BI / Tableau, statistics.
-    """,
+# Preferred Skills: Python (Pandas, NumPy, Scikit-learn), SQL, Power BI / Tableau, statistics.
+#     """,
 
-    "Generative AI, Blockchain, SAP, Salesforce": """Generative AI, Blockchain, SAP, Salesforce:-
+    "GenAI Intern": """GenAI Intern (Generative AI for HR Advisory):-
     
 About the Role:
 -> Support HR-Tek in building integration-ready modules with enterprise HR systems like SAP, Workday, and Salesforce.
@@ -92,19 +87,19 @@ Responsibilities:
 Preferred Skills: REST APIs, JSON, Postman, Salesforce basics, SAP/Workday APIs (preferred), Python, LangChain, OpenAI APIs, NLP basics, prompt engineering.
     """,
 
-    "Product Testing & QA": """Product Testing & QA:-
+#     "Product Testing & QA": """Product Testing & QA:-
     
-About the Role:
--> Help HR-Tek ensure reliability and smooth scaling by testing features across browsers, devices, and automating regression testing.
+# About the Role:
+# -> Help HR-Tek ensure reliability and smooth scaling by testing features across browsers, devices, and automating regression testing.
 
-Responsibilities:
--> Write Selenium scripts for automated regression testing.
--> Conduct manual testing for new features.
--> Ensure cross-browser & cross-device compatibility.
--> Report bugs & work closely with developers for fixes.
+# Responsibilities:
+# -> Write Selenium scripts for automated regression testing.
+# -> Conduct manual testing for new features.
+# -> Ensure cross-browser & cross-device compatibility.
+# -> Report bugs & work closely with developers for fixes.
 
-Preferred Skills: Selenium WebDriver, TestNG, basic Python/Java, manual testing methods.
-    """,
+# Preferred Skills: Selenium WebDriver, TestNG, basic Python/Java, manual testing methods.
+#     """,
 
     "UI/UX Design": """UI/UX Design:-
     
@@ -118,6 +113,21 @@ Responsibilities:
 -> Work with developers to implement designs.
     
 Preferred Skills: Figma, Adobe XD, UX research, design systems.
+    """,
+
+    "Full-Stack Development Intern": """Full-Stack Development Intern (React + Node/Python):-
+    
+About The Role:
+-> Work on building and enhancing HR-Tek’s web-based application, contributing to core features, bug fixes, and scaling
+modules.
+
+Responsibilities:
+-> Develop front-end features using React.js.
+-> Build backend services using Node.js / Python.
+-> Debug, test, and fix issues across the product.
+-> Assist in integrating APIs with external HR systems.
+
+Preferred Skills: React, Node.js/Python, Firebase, REST APIs, Git.
     """,
 
     "Custom Job Description": ""
