@@ -232,8 +232,8 @@ def get_gemini_analysis(resume_text, jd_text):
     Calls the Gemini API to get an ATS analysis of the resume against the job description.
     Returns a structured JSON response with score, strengths, and improvements.
     """
-    apiKey = "AIzaSyBRtu8lqlBjjDqyZuwlFbj1fJq1QOFJ1oE"
-    apiUrl = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key={apiKey}"
+    apiKey = GEMINI_API_KEY
+    apiUrl = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={apiKey}"
 
     system_prompt = """
     You are an expert Applicant Tracking System (ATS) and a professional career coach. Your task is to analyze a resume against a job description.
