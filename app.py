@@ -232,7 +232,7 @@ def get_gemini_analysis(resume_text, jd_text):
     Calls the Gemini API to get an ATS analysis of the resume against the job description.
     Returns a structured JSON response with score, strengths, and improvements.
     """
-    apiKey = GEMINI_API_KEY
+    apiKey = st.secrets["GEMINI_API_KEY"]
     apiUrl = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={apiKey}"
 
     system_prompt = """
