@@ -302,8 +302,14 @@ def get_gemini_analysis(resume_text, jd_text):
             return analysis
 
         except requests.exceptions.HTTPError as http_err:
-             st.error(f"HTTP error occurred: {http_err}. Please check the API key and endpoint.")
-             return None
+            if http_err.response.status_code == 503 and attempt < max_retries - 1:
+                st.warning(f"API request failed with 503 Service Unavailable. Retrying in {base_delay}s...")
+                time.sleep(base_delay)
+                base_delay *= 2
+                continue # Continue to the next attempt
+            else:
+                st.error(f"HTTP error occurred: {http_err}. Please check the API key and endpoint.")
+                return None
         except requests.exceptions.RequestException as e:
             if attempt < max_retries - 1:
                 st.warning(f"API request failed: {e}. Retrying in {base_delay}s...")
